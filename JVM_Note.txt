@@ -1,0 +1,57 @@
+类加载器：
+bootstrap classloader : lib
+extentsion classloader: ext/lib
+ application classloader: classpath
+user defined classloader:
+
+load时候判断二进制字节码格式是否正确
+判断version是否适用
+
+{
+magic number;
+minior version, maxium version;
+count of constrant
+constant pool;
+access flag;
+this_class;
+super_class;
+count of interface and interface;
+feiled count and field;
+method count and method;
+attribute and attribute;
+}
+
+jvm内存模型
+
+堆：对象和数组  --young generation old generation; 
+栈：框架， 本地变量  ; 
+方法区 ： 运行时常量池 ， 类的信息; 代码。
+pc 寄存器 ：
+native method stack
+
+
+gc：
+空间剩余太小或太大：
+
+
+复制移动：还存在引用的复制到 eden surivial. -〉 surivial    
+ 存活时间太久 被gc移动的次数多少次之后还在->old
+ 
+ old gc ： 
+
+ jvm option
+ Xms Xmx;
+ MinHeapFreeRation:  与整个heap的比例
+ NewRation: 2 
+ SurvivorRation: 8 与eden的比例
+ -XX：+UseConcMarkSweepGC
+ 
+ serial collector : single processor or small dataset -XX:UseSerialGC
+ parallel collector :  -XX:UseParallelGC 
+ Garbage First Collector ; default collector ; -XX:UserG1GC
+ 
+ GC Algorithms:
+ 
+ Mark and sweep
+ mark sweep compact
+ mark and copy
